@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.css" />
+		<script src="jquery/jquery-1.11.3.min.js"></script>
+		<script src="jquery/jquery.mobile-1.4.5.js"></script>
+		<script>function goBack() {$.mobile.back();}</script>
+	</head>
+	<body>
+		<div data-role="page" id="pageone">
+			<div data-role="header" data-theme="a"><h1>Hello Laurier</h1></div>
+
+			<div data-role="main" class="ui-content" style="text-align:center">
+				<p>CP317 Project Group Information</p>
+				<p>CLick on the Image</p>
+				<a href="#pagetwo"><img src="images/lol.jpg"></a>
+			</div>
+		</div>
+
+		<div data-role="page" id="pagetwo">
+			<div data-role="header" data-theme="a"><button class="ui-btn ui-icon-arrow-l ui-btn-icon-left" onclick="goBack()">Back</button><h1>Group members</h1><a href="#pageone" class="ui-btn ui-icon-home ui-btn-icon-right">Home</a></div>
+
+			<form class="ui-filterable">
+				<input id="myFilter" data-type="search">
+			</form>
+			<ul data-role="listview" data-filter="true" data-input="#myFilter" data-inset="true">
+				<li><a href="#masonpage"><img src="images/ez.jpg">Mason Cooper</a></li>
+      			<li><a href="#neilpage"><img src="images/luc.png">Neil Ong</a></li>
+      			<li><a href="#kobepage"><img src="images/kobe.jpg">Kobe Bryant</a></li>
+			</ul>
+		</div>
+
+		<div data-role="page" id="masonpage">
+			<div data-role="header" data-theme="a"><a href="#pagetwo" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slide">Back</a><h1><img src = "images/ez.jpg" HEIGHT="20" WIDTH="20" BORDER="0">Mason Cooper</h1><a href="#pageone" class="ui-btn ui-icon-home ui-btn-icon-right" data-transition="slide">Home</a></div>
+			<div data-role="main" class="ui-content" style="text-align:center">
+				<p>Hi I am mason and I am a canadian. I stay up way to late at night and procrastinate way to often.</p>
+			</div>
+			<div data-role="footer">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#" class="ui-btn-active ui-state-persist" data-icon="user">About</a></li>
+       					<li><a href="#mwpage" data-transition="slideup" data-icon="info">Work</a></li>
+        				<li><a href="#mppage" data-transition="slideup" data-icon="grid">Play</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="page" id="mwpage">
+			<div data-role="header" data-theme="a"><a href="#pagetwo" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slide">Back</a><h1><img src = "images/ez.jpg" HEIGHT="20" WIDTH="20" BORDER="0">Mason Cooper</h1><a href="#pageone" class="ui-btn ui-icon-home ui-btn-icon-right" data-transition="slide">Home</a></div>
+			<div data-role="main" class="ui-content" style="text-align:center">
+				<p>I have worked as a score keeper in hocky and for my dads landscapping company as a manual labour.</p>
+			</div>
+			<div data-role="footer">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#masonpage" data-transition="slideup" data-icon="user">About</a></li>
+	       				<li><a href="#" class="ui-btn-active ui-state-persist" data-icon="info">Work</a></li>
+	        			<li><a href="#mppage" data-transition="slideup" data-icon="grid">Play</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="page" id="mppage">
+			<div data-role="header" data-theme="a"><a href="#pagetwo" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slide">Back</a><h1><img src = "images/ez.jpg" HEIGHT="20" WIDTH="20" BORDER="0">Mason Cooper</h1><a href="#pageone" class="ui-btn ui-icon-home ui-btn-icon-right" data-transition="slide">Home</a></div>
+			<div data-role="main" class="ui-content" style="text-align:center">
+				<img src="images/leg.jpeg" HEIGHT="250" WIDTH="250" BORDER="0">
+				<img src="images/mbg.jpg" HEIGHT="250" WIDTH="400" BORDER="0">
+				<p>In my spare time I play lots of video games. The game I play the most is league of legends but I also play others such as; dark souls, OSU! and super smash bros. I also play hockey for an intermeral team as the goalie.</p>
+			</div>
+			<div data-role="footer">
+				<div data-role="navbar" data-iconpos="top" >
+					<ul>
+						<li><a href="#masonpage" data-transition="slideup" data-icon="user">About</a></li>
+	       				<li><a href="#mwpage" data-transition="slideup" data-icon="info">Work</a></li>
+	        			<li><a href="#" class="ui-btn-active ui-state-persist" data-icon="grid">Play</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="page" id="kobepage">
+			<div data-role="header" data-theme="a"><a href="#pagetwo" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slide">Back</a><h1><img src = "images/kobe.jpg" HEIGHT="20" WIDTH="20" BORDER="0">Kobe Bryant</h1><a href="#pageone" class="ui-btn ui-icon-home ui-btn-icon-right" data-transition="slide">Home</a></div>
+			<div data-role="main" class="ui-content" style="text-align:center">
+				<p>I am the greastest Laker of all time. I have a wife and two daughters. I have also played professional basketball for 20 years.</p>
+			</div>
+			<div data-role="footer">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#" class="ui-btn-active ui-state-persist" data-icon="user">About</a></li>
+       					<li><a href="#kwpage" data-transition="slideup" data-icon="info">Work</a></li>
+        				<li><a href="#kppage" data-transition="slideup" data-icon="grid">Play</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="page" id="kwpage">
+			<div data-role="header" data-theme="a"><a href="#pagetwo" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slide">Back</a><h1><img src = "images/kobe.jpg" HEIGHT="20" WIDTH="20" BORDER="0">Kobe Bryant</h1><a href="#pageone" class="ui-btn ui-icon-home ui-btn-icon-right" data-transition="slide">Home</a></div>
+			<div data-role="main" class="ui-content" style="text-align:center">
+				<p>After a long 20 year career in professional basketball I finished with 33,643 points, 7,047 rebounds, and 6306 assists. I have also won 5 NBA Championships and a MVP award.</p>
+			</div>
+			<div data-role="footer">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#kobepage" data-transition="slideup" data-icon="user">About</a></li>
+	       				<li><a href="#" class="ui-btn-active ui-state-persist" data-icon="info">Work</a></li>
+	        			<li><a href="#kppage" data-transition="slideup" data-icon="grid">Play</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="page" id="kppage" data-iconpos="top">
+			<div data-role="header" data-theme="a"><a href="#pagetwo" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slide">Back</a><h1><img src = "images/kobe.jpg" HEIGHT="20" WIDTH="20" BORDER="0">Kobe Bryant</h1><a href="#pageone" class="ui-btn ui-icon-home ui-btn-icon-right" data-transition="slide">Home</a></div>
+			<div data-role="main" class="ui-content" style="text-align:center">
+				<img src="images/kobe_family.jpg" HEIGHT="250" WIDTH="250" BORDER="0">
+				<img src="images/kobe_practice.jpg" HEIGHT="250" WIDTH="400" BORDER="0">
+				<p>In my spare time I like to hang around my wife and children and I also still like to play basketball.</p>
+			</div>
+			<div data-role="footer">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#kobepage" data-transition="slideup" data-icon="user">About</a></li>
+	       				<li><a href="#kwpage" data-transition="slideup" data-icon="info">Work</a></li>
+	        			<li><a href="#" class="ui-btn-active ui-state-persist" data-icon="grid">Play</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="page" id="neilpage">
+			<div data-role="header" data-theme="a"><a href="#pagetwo" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slide">Back</a><h1><img src = "images/luc.png" HEIGHT="20" WIDTH="20" BORDER="0">Neil Ong</h1><a href="#pageone" class="ui-btn ui-icon-home ui-btn-icon-right" data-transition="slide">Home</a></div>
+			<div data-role="main" class="ui-content" style="text-align:center">
+				<p>My name is Neil Ong and I was born in the Philippines! Also, Kobe Bryant is my favourite basketball player.</p>
+			</div>
+			<div data-role="footer">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#" class="ui-btn-active ui-state-persist" data-icon="user">About</a></li>
+       					<li><a href="#nwpage" data-transition="slideup" data-icon="info">Work</a></li>
+        				<li><a href="#nppage" data-transition="slideup" data-icon="grid">Play</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="page" id="nwpage">
+			<div data-role="header" data-theme="a"><a href="#pagetwo" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slide">Back</a><h1><img src = "images/luc.png" HEIGHT="20" WIDTH="20" BORDER="0">Neil Ong</h1><a href="#pageone" class="ui-btn ui-icon-home ui-btn-icon-right" data-transition="slide">Home</a></div>
+			<div data-role="main" class="ui-content" style="text-align:center">
+				<p>I have worked for many different companies. One company I have worked is Labatt. Another company I have worked for is Tencorr Packaging.</p>
+			</div>
+			<div data-role="footer">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#neilpage" data-transition="slideup" data-icon="user">About</a></li>
+	       				<li><a href="#" class="ui-btn-active ui-state-persist" data-icon="info">Work</a></li>
+	        			<li><a href="#nppage" data-transition="slideup" data-icon="grid">Play</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="page" id="nppage">
+			<div data-role="header" data-theme="a"><a href="#pagetwo" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="slide">Back</a><h1><img src = "images/luc.png" HEIGHT="20" WIDTH="20" BORDER="0">Neil Ong</h1><a href="#pageone" class="ui-btn ui-icon-home ui-btn-icon-right" data-transition="slide">Home</a></div>
+			<div data-role="main" class="ui-content" style="text-align:center">
+				<img src="images/Lucian_neil.jpg" HEIGHT="250" WIDTH="400" BORDER="0">
+				<img src="images/Basketball-nike.jpg" HEIGHT="250" WIDTH="250" BORDER="0">
+				<img src="images/tennis.jpg" HEIGHT="250" WIDTH="400" BORDER="0">
+				<p>I like to do lots of different things in my spare time. One of my favourite things to do is play video games. I also like to play both basketball and tennis. </p>
+			</div>
+			<div data-role="footer">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#neilpage" data-transition="slideup" data-icon="user">About</a></li>
+	       				<li><a href="#nwpage" data-transition="slideup" data-icon="info">Work</a></li>
+	        			<li><a href="#" class="ui-btn-active ui-state-persist" data-icon="grid">Play</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

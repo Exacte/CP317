@@ -1,0 +1,384 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.css"/>
+        <link rel="stylesheet" href="css/list_stylesheet.css"/>
+        <script src="jquery/jquery-1.11.3.min.js"></script>
+        <script src="jquery/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascipt"></script>
+        <script src="js/order.js"></script>
+        <script src="js/item.js"></script>
+		<title>Wilf's App</title>
+	</head>
+	<body>
+        <div data-role="page" id="main">
+            <div data-role="header" data-theme="a"><a href="#login" class="ui-btn ui-icon-lock ui-btn-icon-right">Login</a><h1>Wilf's</h1><a href="#order" class="ui-btn ui-icon-shop ui-btn-icon-right" data-rel="popup" data-position-to="window">Order</a></div>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <div data-role="popup" id="order">
+                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                    <div data-role="header">
+                        <h1>Your Order</h1>
+                    </div>
+                    <div data-role="main" class="ui-content">
+                        <p id="order_screen"> </p>
+                        <script>$("a").click(function () { document.getElementById("order_screen").innerHTML = order.show_order(); });</script>
+                        <div data-role="content">
+                            <ul data-role="listview" id="contributionList">
+                                <li><a herf="#"></a><a class="deleteMe" data-icon="delete"></a></li>
+                            </ul>
+                            <script>$('.deleteMe').on('click', function () {$(this).parent().remove();$('#contributionList').listview('refresh');});</script>
+                        </div>
+                        <div data-role="controlgroup" data-type="horizontal">
+                            <button class="ui-btn">Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="menu">
+            <div data-role="header" data-theme="a"><a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Back</a><h1>Wilf's</h1><a href="#main" class="ui-btn ui-icon-home ui-btn-icon-right">Home</a></div>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#breakfast"><img src="images/breakfast.jpg">Breakfast</a></li>
+                <li><a href="#apps"><img src="images/appetizers.jpg">Appetizers</a></li>
+                <li><a href="#soup"><img src="images/soup.jpg">Soup & Salads</a></li>
+                <li><a href="#quesa"><img src="images/quesadillas.jpeg">Quesadillas</a></li>
+                <li><a href="#sandwiches"><img src="images/sandwiches.jpeg">Sandwiches & Wraps</a></li>
+                <li><a href="#entrees"><img src="images/entrees.jpeg">Entrees</a></li>
+                <li><a href="#fromgrill"><img src="images/grill.jpg">From the Grill</a></li>
+                <li><a href="#pasta"><img src="images/pasta.jpg">Pasta</a></li>
+                <li><a href="#wings"><img src="images/wings.jpg">Wing Menu</a></li>
+            </ul>
+        </div>
+        <div data-role="page" id="breakfast">
+            <div data-role="header"><a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Back</a><h1>Breakfast</h1><a href="#main" class="ui-btn ui-icon-home ui-btn-icon-right">Home</a></div>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#PopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Hungry Hawk</a></li>
+                <li><a href="#PopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="1">Eggs Benedict</a></li>
+                <li><a href="#PopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="2">Smoked Salmon and Cream Cheese Bagel</a></li>
+                <li><a href="#PopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="3">Toasted Bagel with Butter</a></li>
+                <li><a href="#PopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="4">Toasted Bagel with Cream Cheese</a></li>
+                <li data-role="collapsible" data-iconpos="right">
+                    <h1>Breakfast Skillets</h1>
+                    <ul data-role="listview" data-theme="b">
+                        <li><a href="#PopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="5">Meat Lovers</a></li>
+                        <li><a href="#PopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="6">Vegetarian</a></li>
+                        <li><a href="#PopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="7">Philly Cheesesteak</a></li>
+                        <li><a href="#PopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="8">Mexican</a></li>
+                        <li><a href="#PopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="9">Benny</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div data-role="popup" id="PopupDialog" data-overlay-theme="b">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <div data-role="header">
+                    <h1 id="breakfast_popup_name"><script> 
+                    $("a").click(function(){
+                     i=$(this).data("index");
+                     document.getElementById("breakfast_popup_name").innerHTML = display_header(0, i);
+                     document.getElementById("breakfast_popup_description").innerHTML = display_description(0, i);
+                     document.getElementById("breakfast_popup_price").innerHTML = "$" + display_price(0, i);
+                    });
+                    </script></h1>
+                </div>
+                <div data-role="main" class="ui-content" style="text-align:center">
+                    <p id="breakfast_popup_description"></p>
+                    <p id="breakfast_popup_price"></p>
+                    <a href="#" class="ui-btn ui-corner-all ui-btn-inline ui-shadow" id="breakfast_adder">Add to Order</a>
+                    <script>$("#breakfast_adder").click(function () { order.add_to_order(new Item(0, i, 1)); });</script>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="apps">
+            <div data-role="header"><a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Back</a><h1>Appetizers</h1><a href="#main" class="ui-btn ui-icon-home ui-btn-icon-right">Home</a></div>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#PopupApp" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Perogies</a></li>
+                <li><a href="#PopupApp" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="1">Grilled Bruschetta</a></li>
+                <li><a href="#PopupApp" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="2">Nichols Bachos</a></li>
+                <li><a href="#PopupApp" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="3">Pickle SPears</a></li>
+                <li><a href="#PopupApp" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="4">Shanghai Shrimp</a></li>
+                <li><a href="#PopupApp" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="5">Mac & Cheese Wedges</a></li>
+                <li><a href="#PopupApp" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="6">Wilf's Spinach Dip</a></li>
+                <li><a href="#PopupApp" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="7">Hummus and Pita</a></li>
+                <li><a href="#PopupApp" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="8">Garlic Bread with Cheese</a></li>
+                <li><a href="#PopupApp" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="9">Edamame</a></li>
+                <li><a href="#PopupApp" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="10">Mozza Sticks</a></li>
+                <li><a href="#PopupApp" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="11">Antijitos</a></li>
+            </ul>
+            <div data-role="popup" id="PopupApp" data-overlay-theme="b">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <div data-role="header">
+                    <h1 id="app_popup_name"><script> 
+                    $("a").click(function(){
+                     i=$(this).data("index");
+                     document.getElementById("app_popup_name").innerHTML = display_header(1, i);
+                     document.getElementById("app_popup_description").innerHTML = display_description(1, i);
+                     document.getElementById("app_popup_price").innerHTML = "$" + display_price(1, i);
+                    });
+
+                    
+                    </script></h1>
+                </div>
+                <div data-role="main" class="ui-content" style="text-align:center">
+                    <p id="app_popup_description"></p>
+                    <p id="app_popup_price"></p>
+                    <button class="ui-btn ui-corner-all ui-btn-inline ui-shadow">Add to Order</button>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="soup">
+            <div data-role="header"><a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Back</a><h1>Soup & Salads</h1><a href="#main" class="ui-btn ui-icon-home ui-btn-icon-right">Home</a></div>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#PopupSoup" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">House Soup</a></li>
+                <li><a href="#PopupSoup" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="1">Soup Du Jour</a></li>
+                <li><a href="#PopupSoup" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="2">Leanne's French Onion Soup</a></li>
+                <li><a href="#PopupSoup" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="3">Garden Salad</a></li>
+                <li><a href="#PopupSoup" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="4">Ceaser Salad</a></li>
+                <li><a href="#PopupSoup" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="5">Cobb Salad</a></li>
+                <li><a href="#PopupSoup" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="6">Strawberry Salmon Salad</a></li>
+                <li><a href="#PopupSoup" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="7">Cali Chickan Salad</a></li>
+            </ul>
+            <div data-role="popup" id="PopupSoup" data-overlay-theme="b">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <div data-role="header">
+                    <h1 id="soup_popup_name"><script> 
+                    $("a").click(function(){
+                     i=$(this).data("index");
+                     document.getElementById("soup_popup_name").innerHTML = display_header(2, i);
+                     document.getElementById("soup_popup_description").innerHTML = display_description(2, i);
+                     document.getElementById("soup_popup_price").innerHTML = "$" + display_price(2, i);
+                    });
+
+                    
+                    </script></h1>
+                </div>
+                <div data-role="main" class="ui-content" style="text-align:center">
+                    <p id="soup_popup_description"></p>
+                    <p id="soup_popup_price"></p>
+                    <button class="ui-btn ui-corner-all ui-btn-inline ui-shadow">Add to Order</button>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="quesa">
+            <div data-role="header"><a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Back</a><h1>Quesadillas</h1><a href="#main" class="ui-btn ui-icon-home ui-btn-icon-right">Home</a></div>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#PopupQuesa" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Classic</a></li>
+                <li><a href="#PopupQuesa" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="1">Spinnach and Feta</a></li>
+                <li><a href="#PopupQuesa" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="2">Buffalo Chicken</a></li>
+            </ul>
+            <div data-role="popup" id="PopupQuesa" data-overlay-theme="b">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <div data-role="header">
+                    <h1 id="quesa_popup_name"><script> 
+                    $("a").click(function(){
+                     i=$(this).data("index");
+                     document.getElementById("quesa_popup_name").innerHTML = display_header(3, i);
+                     document.getElementById("quesa_popup_description").innerHTML = display_description(3, i);
+                     document.getElementById("quesa_popup_price").innerHTML = "$" + display_price(3, i);
+                    });
+
+                    
+                    </script></h1>
+                </div>
+                <div data-role="main" class="ui-content" style="text-align:center">
+                    <p id="quesa_popup_description"></p>
+                    <p id="quesa_popup_price"></p>
+                    <button class="ui-btn ui-corner-all ui-btn-inline ui-shadow">Add to Order</button>
+                </div>
+        </div>
+        </div>
+        <div data-role="page" id="sandwiches">
+            <div data-role="header"><a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Back</a><h1>Sandwhiches & Wraps</h1><a href="#main" class="ui-btn ui-icon-home ui-btn-icon-right">Home</a></div>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#PopupSand" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">The Seagram</a></li>
+                <li><a href="#PopupSand" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="1">Buffalo Chicken</a></li>
+                <li><a href="#PopupSand" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="2">Apple, Cheddar & Turkey Sandwhich</a></li>
+                <li><a href="#PopupSand" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="3">The Hawker</a></li>
+                <li><a href="#PopupSand" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="4">Pulled Pork Wrap</a></li>
+                <li><a href="#PopupSand" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="5">Chicken Club Sandwhich</a></li>
+                <li><a href="#PopupSand" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="6">Guacamole Turkey Club</a></li>
+                <li><a href="#PopupSand" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="7">Grilled Cheesee</a></li>
+                <li><a href="#PopupSand" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="8">Chicken Ceaser Wrap</a></li>
+                <li><a href="#PopupSand" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="9">Veggie Wrap</a></li>
+            </ul>
+            <div data-role="popup" id="PopupSand" data-overlay-theme="b">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <div data-role="header">
+                    <h1 id="sand_popup_name"><script> 
+                    $("a").click(function(){
+                     i=$(this).data("index");
+                     document.getElementById("sand_popup_name").innerHTML = display_header(4, i);
+                     document.getElementById("sand_popup_description").innerHTML = display_description(4, i);
+                     document.getElementById("sand_popup_price").innerHTML = "$" + display_price(4, i);
+                    });
+
+                    
+                    </script></h1>
+                </div>
+                <div data-role="main" class="ui-content" style="text-align:center">
+                    <p id="sand_popup_description"></p>
+                    <p id="sand_popup_price"></p>
+                    <button class="ui-btn ui-corner-all ui-btn-inline ui-shadow">Add to Order</button>
+                </div>
+        </div>
+        </div>
+        <div data-role="page" id="entrees">
+            <div data-role="header"><a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Back</a><h1>Entrees</h1><a href="#main" class="ui-btn ui-icon-home ui-btn-icon-right">Home</a></div>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#PopupEntree" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">It's Greek to be a Laurier Golden Hawk</a></li>
+                <li><a href="#PopupEntree" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="1">Sesame Beef and Broccoli</a></li>
+                <li><a href="#PopupEntree" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="2">Green Curry & Rice</a></li>
+                <li><a href="#PopupEntree" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="3">Wilf's Famous Buffalo Fingers</a></li>
+            </ul>
+            <div data-role="popup" id="PopupEntree" data-overlay-theme="b">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <div data-role="header">
+                    <h1 id="entree_popup_name"><script> 
+                    $("a").click(function(){
+                     i=$(this).data("index");
+                     document.getElementById("entree_popup_name").innerHTML = display_header(5, i);
+                     document.getElementById("entree_popup_description").innerHTML = display_description(5, i);
+                     document.getElementById("entree_popup_price").innerHTML = "$" + display_price(5, i);
+                    });
+
+                    
+                    </script></h1>
+                </div>
+                <div data-role="main" class="ui-content" style="text-align:center">
+                    <p id="entree_popup_description"></p>
+                    <p id="entree_popup_price"></p>
+                    <button class="ui-btn ui-corner-all ui-btn-inline ui-shadow">Add to Order</button>
+                </div>
+        </div>
+        </div>
+        <div data-role="page" id="fromgrill">
+            <div data-role="header"><a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Back</a><h1>From the Grill</h1><a href="#main" class="ui-btn ui-icon-home ui-btn-icon-right">Home</a></div>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#PopupGrill" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Union Burger</a></li>
+                <li><a href="#PopupGrill" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="1">Union Bruger with Cheese</a></li>
+                <li><a href="#PopupGrill" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="2">Southwest Burger</a></li>
+                <li><a href="#PopupGrill" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="3">The Texan</a></li>
+                <li><a href="#PopupGrill" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="4">Greasy Gator Burger</a></li>
+                <li><a href="#PopupGrill" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="5">Daddy Mac Burger</a></li>
+            </ul>
+            <div data-role="popup" id="PopupGrill" data-overlay-theme="b">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <div data-role="header">
+                    <h1 id="grill_popup_name"><script> 
+                    $("a").click(function(){
+                     i=$(this).data("index");
+                     document.getElementById("grill_popup_name").innerHTML = display_header(6, i);
+                     document.getElementById("grill_popup_description").innerHTML = display_description(6, i);
+                     document.getElementById("grill_popup_price").innerHTML = "$" + display_price(6, i);
+                    });
+
+                    
+                    </script></h1>
+                </div>
+                <div data-role="main" class="ui-content" style="text-align:center">
+                    <p id="grill_popup_description"></p>
+                    <p id="grill_popup_price"></p>
+                    <button class="ui-btn ui-corner-all ui-btn-inline ui-shadow">Add to Order</button>
+                </div>
+        </div>
+        </div>
+        <div data-role="page" id="pasta">
+            <div data-role="header"><a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Back</a><h1>Pasta</h1><a href="#main" class="ui-btn ui-icon-home ui-btn-icon-right">Home</a></div>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#PopupPasta" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Cajun Alfredo</a></li>
+                <li><a href="#PopupPasta" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="1">Four Cheese Penne</a></li>
+                <li><a href="#PopupPasta" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="2">Wilf's Spin Dip Mac & Cheese</a></li>
+            </ul>
+            <div data-role="popup" id="PopupPasta" data-overlay-theme="b">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <div data-role="header">
+                    <h1 id="pasta_popup_name"><script> 
+                    $("a").click(function(){
+                     i=$(this).data("index");
+                     document.getElementById("pasta_popup_name").innerHTML = display_header(7, i);
+                     document.getElementById("pasta_popup_description").innerHTML = display_description(7, i);
+                     document.getElementById("pasta_popup_price").innerHTML = "$" + display_price(7, i);
+                    });
+
+                    
+                    </script></h1>
+                </div>
+                <div data-role="main" class="ui-content" style="text-align:center">
+                    <p id="pasta_popup_description"></p>
+                    <p id="pasta_popup_price"></p>
+                    <button class="ui-btn ui-corner-all ui-btn-inline ui-shadow">Add to Order</button>
+                </div>
+        </div>
+        </div>
+        <div data-role="page" id="wings">
+            <div data-role="header"><a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Back</a><h1>Wing's</h1><a href="#main" class="ui-btn ui-icon-home ui-btn-icon-right">Home</a></div>
+            <ul data-role="listview" data-inset="true">
+                <li data-role="collapsible" data-iconpos="right"><h1>Medium</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>Hot</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>Melt your Face off</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>BBQ</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>Honey Garlic</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>Sriracha Hot</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>Wet Cajun</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>Ceaser</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>Red Ale Chipotle</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>Fire & Ice</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>East meets West</h1><ul data-role="listview" data-theme="b"><li>< href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0"a>Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>Texas Creole</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>Rock n 'Roll</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>Sriracha Caesar</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>Honey Awesome</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>Sweet Caribbean Jerk</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>Smoke Apple Wood</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+                <li data-role="collapsible" data-iconpos="right"><h1>Parm & Pepper</h1><ul data-role="listview" data-theme="b"><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's Famous Wings</a></li><li><a href="#PopupWings" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-index="0">Wilf's New Boneless Wings</a></li></ul></li>
+            </ul>
+            <div data-role="popup" id="PopupWings" data-overlay-theme="b">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <div data-role="header">
+                    <h1 id="wings_popup_name"><script> 
+                    $("a").click(function(){
+                     i=$(this).data("index");
+                     document.getElementById("wings_popup_name").innerHTML = display_header(8, i);
+                     document.getElementById("wings_popup_description").innerHTML = display_description(8, i);
+                     document.getElementById("wings_popup_price").innerHTML = "$" + display_price(8, i);
+                    });
+
+                    
+                    </script></h1>
+                </div>
+                <div data-role="main" class="ui-content" style="text-align:center">
+                    <p id="wings_popup_description"></p>
+                    <p id="wings_popup_price"></p>
+                    <button class="ui-btn ui-corner-all ui-btn-inline ui-shadow">Add to Order</button>
+                </div>
+        </div>
+        </div>
+
+        <div data-role="page" id="contact">
+            <div data-role="header" data-theme="a"><a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Back</a><h1>Contact Us</h1><a href="#main" class="ui-btn ui-icon-home ui-btn-icon-right">Home</a></div>
+            <P align="center" id ="wilf_pic"><img src="images/wilfs-fb.jpg"></p>
+            <p id = "location" align="center">Location and Hours</p>
+            <p align="center">2nd Floor, Fred Nichols Campus Centre</p>
+            <p align="center">Mon-Sun: 11AM - 1AM</p>
+            <p align="center">Closed December 23 to January 2</p>
+            <p id = "call_us" align="center">Call Us</p>
+            <p align="center">519-884-1970</p>
+        </div>
+        <div data-role="page" id="login">
+            <div data-role="header" data-theme="a"><a href="#" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-rel="back">Back</a><h1>Login</h1></div>
+            <div data-role="main" class="ui-content">
+                <form method="post" action="">
+                    <label for="user_emal">Email:</label>
+                    <input type="text" name="user_email" id="user_email">
+                    <label for="user_pass">Password:</label>
+                    <input type="text" name="user_pass" id="user_pass">
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+</body>
+</html>
